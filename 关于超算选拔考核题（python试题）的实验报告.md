@@ -697,7 +697,7 @@ if __name__ == "__main__":
 
 ## 特别鸣谢
 
-***回归天空（SXP-Simon）   Kimi***  ***全体NCUSCC招新群群友***
+***回归天空（[SXP-Simon](https://github.com/SXP-Simon)） Kimi***  ***佬鸽([olddove-laoge](https://github.com/olddove-laoge))***  ***全体NCUSCC招新群群友***
 
 **此排名不分先后，按作者想起的顺序进行排列。**
 
