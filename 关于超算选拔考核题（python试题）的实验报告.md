@@ -8,7 +8,7 @@
 
 ### **1.配置虚拟机：**在虚拟机中安装 Ubuntu 22.04 LTS 操作系统。
 
-​       我使用的虚拟机软件是VMware，其实更好的选择是使用WSL2，但因为VMware的快照功能给我更多的容错。所以我在思考后还是选择了使用VMware作为工具。在此之前我已经安装了基于Ubuntu操作系统的虚拟机，但由于本次实验使用的Ubuntu的版本为22.04LTS，这与我所使用的24.04LTS不同，所以我创建了新的虚拟机。![](C:\Users\李政阳\Desktop\新建文件夹\001.png)
+​       我使用的虚拟机软件是VMware，其实更好的选择是使用WSL2，但因为VMware的快照功能给我更多的容错。所以我在思考后还是选择了使用VMware作为工具。在此之前我已经安装了基于Ubuntu操作系统的虚拟机，但由于本次实验使用的Ubuntu的版本为22.04LTS，这与我所使用的24.04LTS不同，所以我创建了新的虚拟机。
 
 ### 2.配置虚拟机的网络连接，确保可以正常联网。
 
@@ -24,21 +24,20 @@
 
 ​        在扩展这一栏，我们搜索chinese，选择第一个进行instill即可。
 
-<img src="https://pic.imgdb.cn/item/671323d3d29ded1a8cef4753.png" alt="屏幕截图 2024-10-17 193609.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133dad1f7f6.png" alt="屏幕截图 2024-10-17 193609.png" title="屏幕截图 2024-10-17 193609.png" />
 
 ​        然后在扩展这一栏，我们搜索Python，选择第一个进行instill即可。
 
-<img src="https://pic.imgdb.cn/item/67132471d29ded1a8cf0c794.png" alt="屏幕截图 2024-10-14 101918.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133daac7046.png" alt="屏幕截图 2024-10-14 101918.png" title="屏幕截图 2024-10-14 101918.png" />
 
 ​        完成后新建一个文件夹来存放我们的代码，这里我创建的文件夹名称为vscode。
-<img src="https://pic.imgdb.cn/item/67132484d29ded1a8cf0ee30.png" alt="屏幕截图 2024-10-14 102309.png">
-
+<img src="https://www.helloimg.com/i/2024/10/19/67133daa64629.png" alt="屏幕截图 2024-10-14 102309.png" title="屏幕截图 2024-10-14 102309.png" />
 ​        最后在vscode中打开我们创建的文件夹。
-<img src="https://pic.imgdb.cn/item/671324a2d29ded1a8cf13242.png" alt="屏幕截图 2024-10-14 102513.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133daa6858e.png" alt="屏幕截图 2024-10-14 102513.png" title="屏幕截图 2024-10-14 102513.png" />
 
 ​        再根据下图步骤进行必要的设置。
-<img src="https://pic.imgdb.cn/item/671323c1d29ded1a8cef1a42.png" alt="39acda2dab69e7aaecdf3a89069e4b38.png">
-<img src="https://pic.imgdb.cn/item/67132447d29ded1a8cf0639b.png" alt="b97aed9ca30d25a07afa20f5eab87396.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133da70f3e3.png" alt="39acda2dab69e7aaecdf3a89069e4b38.png" title="39acda2dab69e7aaecdf3a89069e4b38.png" />
+<img src="https://www.helloimg.com/i/2024/10/19/67133da6f2cda.png" alt="b97aed9ca30d25a07afa20f5eab87396.png" title="b97aed9ca30d25a07afa20f5eab87396.png" />
 
 ​       点击后会自动创建一个settings.json文件，在settings.json中输入下列代码，用来配置flake8和yapf并关闭pylint工具。
 
@@ -243,14 +242,13 @@ if __name__ == "__main__":
 
 ​      使用mpi4py进行10000*10000矩阵的平均运算时间结果如下：
 
-<img src="https://pic.imgdb.cn/item/671324f7d29ded1a8cf1f019.png" alt="屏幕截图 2024-10-12 192035.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133da9dd273.png" alt="屏幕截图 2024-10-12 192035.png" title="屏幕截图 2024-10-12 192035.png" />
 
 ​       平均用时14.1秒。
 
 ​       使用multiprocessing进行10000*10000矩阵的运算所用时间结果如下：
 
-<img src="https://pic.imgdb.cn/item/6713251dd29ded1a8cf249e8.png" alt="屏幕截图 2024-10-16 093422.png">
-
+<img src="https://www.helloimg.com/i/2024/10/19/67133dac31945.png" alt="屏幕截图 2024-10-16 093422.png" title="屏幕截图 2024-10-16 093422.png" />
 ​         平均用时13.5秒。
 
 ​         由于使用了random来随机化矩阵，这可能会导致相同大小的矩阵的乘法运算量有所波动，这会影响计算的时间，导致计算的时间波动性较强。所以并不能直观地看的出来使用四进程对10000*10000的大型矩阵进行乘法运算的时候，使用mpi4py和使用multiprocessing那个更好一点。
@@ -266,11 +264,11 @@ top
 
 在这里我选择在终端输入上述指令来打开监控面板。
 
-对于mpi4py：<img src="https://pic.imgdb.cn/item/6713253bd29ded1a8cf28b46.png" alt="屏幕截图 2024-10-16 093335.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133dab6a39e.png" alt="屏幕截图 2024-10-16 093335.png" title="屏幕截图 2024-10-16 093335.png" />
 
 其4进程的运行情况下，CPU占用接近100%，占用相当之高。内存使用情况相对而言没有特别高，有大量的空闲内存和缓存。交换空间完全没有被使用，这也表明系统没有因为内存不足而使用交换空间却运行程序。
 
-对于multiprocessing：<img src="https://pic.imgdb.cn/item/67132550d29ded1a8cf2bde5.png" alt="屏幕截图 2024-10-16 093047.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133daadbdda.png" alt="屏幕截图 2024-10-16 093047.png" title="屏幕截图 2024-10-16 093047.png" />
 
 ​        而对于multiprocessing来说，可以看出CPU的占用率相较于mpi4py并不是很高啊，内存占用同样不是很高，且相对mpi4py较低。但同样在4线程的情况下，运行时间相差不多。这可能是应为multiprocessing减少了通信的频率，从而减少了因过度通信占用的内存。
 
@@ -291,7 +289,8 @@ top
 
 ​        十六进程的情况下，mpi4py用时不降反增，用时11秒多，似乎10000*10000的矩阵已经无法满足其性能，而multiprocessing的运行时间为16.4秒。
 
-汇总如图：<img src="https://pic.imgdb.cn/item/6713256ed29ded1a8cf300c2.png" alt="good.png">
+汇总如图：
+<img src="https://www.helloimg.com/i/2024/10/19/67133da6c417a.png" alt="good.png" title="good.png" />
 
 ​        如此看来，似乎在矩阵大小为10000*10000的情况下，multiprocessing的计算速度不如mpi4py。当然这也有着一定的局限性，因为设备的性能有限，所测试的数据量不够大，因此无法得出普适性的结论。
 
@@ -299,9 +298,9 @@ top
 
 - 使用不同矩阵大小，来比较计算量变化对计算时间的影响。
 
-  对于mpi4py，如图：<img src="https://pic.imgdb.cn/item/67132582d29ded1a8cf328b9.png" alt="re.png">
+  对于mpi4py，如图：<img src="https://www.helloimg.com/i/2024/10/19/67133da8c980e.png" alt="re.png" title="re.png" />
 
-  对于multiprocessing，如图：<img src="https://pic.imgdb.cn/item/6713259dd29ded1a8cf363ed.png" alt="tired.png">
+  对于multiprocessing，如图：<img src="https://www.helloimg.com/i/2024/10/19/67133da936015.png" alt="tired.png" title="tired.png" />
 
   由此可见，对于大型矩阵的乘法运算，mpi4py的稳定性明显优于multiprocessing。
 
@@ -608,7 +607,8 @@ if __name__ == "__main__":
 
 ​       只能说效果拔群，运算速度很快。由于不分多进程，在计算10000*10000的大型矩阵时，仅用时2.6秒。
 
-<img src="https://pic.imgdb.cn/item/671325c7d29ded1a8cf3bed9.png" alt="scipy1.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133da90417f.png" alt="scipy1.png" title="scipy1.png" />
+
 
 ​        但明显发现scipy在面对更大的数组是出现了疲软，在矩阵较大时运行时间更是急剧上升。并且在计算20000*20000的矩阵时，程序更是直接就崩溃了，什么都没有输出。而且scipy的也再无从优化，其本身就是一个及其高效的数组计算库，对于较大的数据量的处理较之多进程的其它方案有一定的差距。再优化也只是向着多进程的方向，转而使用mpi4py和multiprocessing，而不再需要scipy。
 
@@ -619,19 +619,22 @@ if __name__ == "__main__":
 - 可以看到mpi4py在进程数为2时有着最短的运行时间，且遥遥领先。
 
 
-<img src="https://pic.imgdb.cn/item/671325d7d29ded1a8cf3e2a7.png" alt="new0.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133da887043.png" alt="new0.png" title="new0.png" />
 
-​       对于CPU的使用，我把图片拼接在了一起，方便进行对比。（排序为：左上2进程，右上4进程，左下8进程，右下16进程）<img src="https://pic.imgdb.cn/item/671325f3d29ded1a8cf41bf0.png" alt="拼接.png">
+​       对于CPU的使用，我把图片拼接在了一起，方便进行对比。（排序为：左上2进程，右上4进程，左下8进程，右下16进程）
+<img src="https://www.helloimg.com/i/2024/10/19/67133dad16831.png" alt="拼接.png" title="拼接.png" />
 
-​       可以看出在2进程时CPU的使用率是最高的。所以2进程有着更快地处理速度和最短的完成时间。而对于CPU的使用率，除2进程外不同进程基本持平，而运算速度越快，CPU的占用越高。对于内存，个进程均有着不低的内存占用，但内存的使用仍很健康，且只占用了一部分交换内存空间，没有因频繁使用交换空间造成性能下降。<img src="https://pic.imgdb.cn/item/67132604d29ded1a8cf44118.png" alt="CPU占用问题.png">
+​       可以看出在2进程时CPU的使用率是最高的。所以2进程有着更快地处理速度和最短的完成时间。而对于CPU的使用率，除2进程外不同进程基本持平，而运算速度越快，CPU的占用越高。对于内存，个进程均有着不低的内存占用，但内存的使用仍很健康，且只占用了一部分交换内存空间，没有因频繁使用交换空间造成性能下降。
+<img src="https://www.helloimg.com/i/2024/10/19/67133da709aa6.png" alt="CPU占用问题.png" title="CPU占用问题.png" />
 
 ​        另外，值得一提的是，在使用mpi4py进行运行时进行CPU的使用监控，发现所有的程序在一开始都是两个个CPU占用飙升而两个基本不怎么使用，但在运行几秒钟后，所有CPU的占用回到了持平。这一点我在查找资料后认为是进程调度策略的原因，本身主进程存在的意义就是先将矩阵切割分发给非主进程进行运算，而这一过程并不需要很高的CPU占用，所以会有部分CPU占用较低。在非阻塞信道的优化后，非主进程会一边处理数据一边将处理完成的数据返回给主进程，由主进程进行收集，所以在分发完数据后，主进程同样开始了数据的收集和处理，这也导致CPU占用升高。
 
-- 对于multiprocessing，其运行速度在进程数较小时远不及mpi4py。如下图：<img src="https://pic.imgdb.cn/item/671323c7d29ded1a8cef2909.png" alt="666.png">
+- 对于multiprocessing，其运行速度在进程数较小时远不及mpi4py。如下图：
+<img src="https://www.helloimg.com/i/2024/10/19/67133da6c1dfe.png" alt="666.png" title="666.png" />
 
 ​          multiprocessing的各进程CPU占用如图。（排序为：左上2进程，右上4进程，左下8进程，右下16进程）
 
-<img src="https://pic.imgdb.cn/item/6713261cd29ded1a8cf470b9.png" alt="拼接-1729094466341-6.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133dacd1101.png" alt="拼接-1729094466341-6.png" title="拼接-1729094466341-6.png" />
 
 ​       明显可以看出multiprocessing对于CPU的占用并没有很高，内存使用情况显示有大量的空闲内存和缓存，但可用内存减少。
 
@@ -643,9 +646,9 @@ if __name__ == "__main__":
 
 ### 3.不同矩阵大小的情况下数据情况及运行性能比较。
 
-<img src="https://pic.imgdb.cn/item/6713262fd29ded1a8cf498c4.png" alt="10086.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133da6aa4c3.png" alt="10086.png" title="10086.png" />
 
-<img src="https://pic.imgdb.cn/item/671323c1d29ded1a8cef1a8c.png" alt="333.png">
+<img src="https://www.helloimg.com/i/2024/10/19/67133da6d1332.png" alt="333.png" title="333.png" />
 
 ​       二者的性能略有差异，但都呈现随着矩阵大小增大，运算时间变长的趋势。
 
@@ -694,4 +697,21 @@ if __name__ == "__main__":
 
 **此排名不分先后，按作者想起的顺序进行排列。**
 
-​                                                                                                                                                       **2025年10月17日**
+<img src="https://www.helloimg.com/i/2024/10/19/67133da6a81f9.png" alt="1.png" title="1.png" />
+<img src="https://www.helloimg.com/i/2024/10/19/67133da704de7.png" alt="2进程.png" title="2进程.png" />
+
+<img src="https://www.helloimg.com/i/2024/10/19/67133da6cac77.png" alt="222.png" title="222.png" />
+<img src="https://www.helloimg.com/i/2024/10/19/67133da858676.png" alt="myplot3.png" title="myplot3.png" />
+<img src="https://www.helloimg.com/i/2024/10/19/67133da89da41.png" alt="new1.png" title="new1.png" />
+<img src="https://www.helloimg.com/i/2024/10/19/67133daa4b973.png" alt="屏幕截图 2024-10-13 103143.png" title="屏幕截图 2024-10-13 103143.png" />
+
+<img src="https://www.helloimg.com/i/2024/10/19/67133daa66d49.png" alt="屏幕截图 2024-10-15 143737.png" title="屏幕截图 2024-10-15 143737.png" />
+
+<img src="https://www.helloimg.com/i/2024/10/19/67133daaaf888.png" alt="屏幕截图 2024-10-13 101632.png" title="屏幕截图 2024-10-13 101632.png" />
+<img src="https://www.helloimg.com/i/2024/10/19/67133daae8aa6.png" alt="屏幕截图 2024-10-16 093115.png" title="屏幕截图 2024-10-16 093115.png" />
+
+<img src="https://www.helloimg.com/i/2024/10/19/67133daac9c5c.png" alt="屏幕截图 2024-10-13 103327.png" title="屏幕截图 2024-10-13 103327.png" />
+
+<img src="https://www.helloimg.com/i/2024/10/19/67133dac8ac23.png" alt="拼接-1728924683125-18.png" title="拼接-1728924683125-18.png" />
+<img src="https://www.helloimg.com/i/2024/10/19/67133dad110bd.png" alt="测试0-1728968301149-2.png" title="测试0-1728968301149-2.png" />
+<img src="https://www.helloimg.com/i/2024/10/19/67133dad1304f.png" alt="测试0.png" title="测试0.png" />​                                                                                                                                                       **2025年10月17日**
