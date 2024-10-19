@@ -646,11 +646,15 @@ if __name__ == "__main__":
 
 ### 3.不同矩阵大小的情况下数据情况及运行性能比较。
 
+<img src="https://www.helloimg.com/i/2024/10/19/6713879995149.png" alt="greet1.png" title="greet1.png" />
+
 <img src="https://www.helloimg.com/i/2024/10/19/67133da6aa4c3.png" alt="10086.png" title="10086.png" />
 
 <img src="https://www.helloimg.com/i/2024/10/19/67133da6d1332.png" alt="333.png" title="333.png" />
 
-​       二者的性能略有差异，但都呈现随着矩阵大小增大，运算时间变长的趋势。
+<img src="https://www.helloimg.com/i/2024/10/19/67138abbb419a.png" alt="final.png" title="final.png" />
+
+​       二者的性能略有差异，但都呈现随着矩阵大小增大，运算时间变长的趋势。且可以很明显的看出来，在进程数较大的情况下，joblib优化后的multiprocessing程序明显要优于mpi4py，但在进程数较小时，其运行时间也相应的长于mpi4py，只能说各有优劣。
 
 ## 四.实验过程中遇到的问题及解决方案。
 
