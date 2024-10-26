@@ -186,51 +186,64 @@ mpiexec -n 4 python3 文件路径.py
 
 ```python
 import numpy as np
-from joblib import Parallel, delayed
+from multiprocessing import Pool
 import time
 
 def matrix_multiply(A, B):
     return np.dot(A, B)
 
-# 定义执行单个区块乘法的函数
-def block_multiply(args):
-    A_block, B_block = args
-    return matrix_multiply(A_block, B_block)
+def split_matrix(A, B, num_splits):
+    row_size = A.shape[0] // num_splits
+    col_size = B.shape[1] // num_splits
+
+    row_splits = [A[i*row_size:(i+1)*row_size] for i in range(num_splits)]
+    col_splits = [B[:, j*col_size:(j+1)*col_size] for j in range(num_splits)]
+
+    return row_splits, col_splits
+
+def parallel_matrix_multiply(A, B, num_splits):
+    row_size = A.shape[0] // num_splits
+    col_size = B.shape[1] // num_splits
+    final_result = np.empty((A.shape[0], B.shape[1]), dtype=np.float32)  # 预先定义空矩阵
+
+    pool = Pool(processes=num_splits)
+    row_splits, col_splits = split_matrix(A, B, num_splits)
+    
+    # 使用生成器来创建任务
+    tasks = ((row_splits[i], col_splits[i]) for i in range(num_splits))
+    
+    results = pool.starmap(matrix_multiply, tasks)
+
+    pool.close()
+    pool.join()
+
+    # 直接在最终结果矩阵上进行操作
+    for i in range(num_splits):
+        start_row = i * row_size
+        end_row = (i + 1) * row_size
+        start_col = i * col_size
+        end_col = (i + 1) * col_size
+        final_result[start_row:end_row, start_col:end_col] = results[i]
+
+    return final_result
 
 def main():
     n = 10000
-    num_blocks = 4
-
-    block_size = n // num_blocks
-
-    num_runs = 5
-    total_time = 0
+    num_splits = 4
+    num_runs = 5  # 定义运行的次数
+    total_time_all_runs = 0  # 用于记录所有运行的总时间
 
     for _ in range(num_runs):
-        A = np.random.rand(n, n)
-        B = np.random.rand(n, n)
+        A = np.random.rand(n, n).astype(np.float32)  # 使用 float32 数据类型
+        B = np.random.rand(n, n).astype(np.float32)
 
-        # 初始化最终矩阵C
-        C = np.zeros((n, n), dtype=np.float64)
+        starttime = time.time()
+        result = parallel_matrix_multiply(A, B, num_splits)
+        total_time_all_runs += time.time() - starttime
 
-        start_time = time.time()
-
-        # 分割矩阵并执行多进程计算
-        block_args = [(A[i*block_size:(i+1)*block_size, :], B[:, i*block_size:(i+1)*block_size]) for i in range(num_blocks)]
-        block_results = Parallel(n_jobs=-1)(delayed(block_multiply)(args) for args in block_args)
-
-        # 将区块结果合并到最终矩阵
-        for i, block_result in enumerate(block_results):
-            row_start = i // num_blocks * block_size
-            col_start = (i % num_blocks) * block_size
-            C[row_start:row_start+block_size, col_start:col_start+block_size] = block_result
-
-        end_time = time.time()
-        total_time += end_time - start_time
-
-    average_time = total_time / num_runs
-
-    print(f"Average execution time: {average_time:.4f} seconds")
+    # 计算平均时间
+    average_time = total_time_all_runs / num_runs
+    print(f"Average execution time: {average_time} seconds")
 
 if __name__ == "__main__":
     main()
